@@ -31,61 +31,11 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             Column {
-                ScrollItems(Message("Potato", "List of potato"))
+                Nav()
             }
         }
     }
 }
 
-data class Message(val title: String, val body: String)
-
-@Composable
-fun MessageCard(msg: Message) {
-    Column() {
-        Row(modifier = Modifier.padding(all = 8.dp)) {
-            Image(
-                painter = painterResource(R.drawable.potato),
-                contentDescription = "Potato",
-                modifier = Modifier.size(100.dp)
-            )
-
-            Spacer(modifier = Modifier.width(10.dp))
-            Column {
-                Text(
-                    text = msg.title,
-                    style = MaterialTheme.typography.subtitle1,
-                    color = Color(0, 128, 0, 255)
-                )
-                Text(
-                    text = msg.body,
-                    style = MaterialTheme.typography.body2,
-                    color = Color(128, 0, 0, 255)
-                )
-            }
-        }
-    }
-}
-
-@Composable
-fun List(messages: List<Message>) {
-    LazyColumn {
-        items(messages) { message ->
-            MessageCard(message)
-        }
-    }
-}
-
-@Composable
-fun ScrollItems(msg: Message) {
-    Column(
-        modifier = Modifier
-            .verticalScroll(rememberScrollState())
-            .fillMaxSize()
-    ) {
-        repeat(20) {
-            MessageCard(msg)
-        }
-    }
-}
 
 
