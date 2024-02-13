@@ -21,11 +21,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 
-// some of the code is copied from the tutorial
-// https://developer.android.com/jetpack/compose/tutorial
-// scroll items function from
-// https://codingwithrashid.com/how-to-add-scrolling-in-android-jetpack-compose/
-
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

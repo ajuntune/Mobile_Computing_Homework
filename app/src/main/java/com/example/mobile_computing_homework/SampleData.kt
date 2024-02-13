@@ -1,9 +1,4 @@
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.rememberCoroutineScope
-import androidx.compose.ui.platform.LocalContext
-import androidx.datastore.dataStore
 import com.example.mobile_computing_homework.Message
-import com.example.mobile_computing_homework.datastore.StoreProfileData
 
 /**
  * SampleData for Jetpack Compose Tutorial 

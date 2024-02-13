@@ -79,6 +79,7 @@ fun ProfileScreen(navController: NavController){
         )
 
         Spacer(modifier = Modifier.height(20.dp))
+
         Button(onClick = { photoPickerLauncher.launch(
             PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly)
         ) }) {
