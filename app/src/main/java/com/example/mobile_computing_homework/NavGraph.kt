@@ -11,8 +11,8 @@ import androidx.navigation.compose.rememberNavController
 fun Nav(){
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = "Conversation screen"){
-        composable(route = "Empty screen"){
-            EmptyScreen(navController)
+        composable(route = "Profile screen"){
+            ProfileScreen(navController)
         }
         composable(route = "Conversation screen"){
             Conversation(SampleData.conversationSample, navController)
