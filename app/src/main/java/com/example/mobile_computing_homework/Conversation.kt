@@ -1,7 +1,11 @@
 package com.example.mobile_computing_homework
 
 import SampleData
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.content.Context
 import android.net.Uri
+import android.os.Build
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -22,13 +26,19 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.sp
+import androidx.core.app.NotificationCompat
+import androidx.core.content.getSystemService
 import androidx.navigation.NavController
+import androidx.work.OneTimeWorkRequestBuilder
+import androidx.work.WorkManager
 import coil.compose.AsyncImage
 import com.example.mobile_computing_homework.ProfileScreen
 import com.example.mobile_computing_homework.datastore.StoreProfileData
 import com.example.mobile_computing_homework.datastore.StoreUserImage
 import kotlinx.coroutines.launch
+import java.util.concurrent.TimeUnit
 
 data class Message(val title: String, val body: String)
 
@@ -77,10 +87,9 @@ fun MessageCard(msg: Message) {
     }
 }
 
+
 @Composable
 fun Conversation(messages: List<Message>, navController: NavController) {
-
-
 
     LazyColumn {
         items(messages) { message ->
@@ -94,5 +103,8 @@ fun Conversation(messages: List<Message>, navController: NavController) {
         }) {
             Text(text = "Next screen", fontSize = 40.sp)
         } }
+
+
     }
 }
+
